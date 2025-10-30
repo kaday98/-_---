@@ -1,0 +1,133 @@
+/* --- Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🖼️ WALLPAPER */
+.wallpaper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.wallpaper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+/* 🎥 VIDEO */
+.video-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🌐 CONTENT */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.glow {
+  font-size: 2.8rem;
+  color: #ff0033;
+  text-shadow: 0 0 15px #ff0033, 0 0 30px #ff0033, 0 0 60px #ff0033;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+p {
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* 🔘 BUTTONS */
+.link-buttons {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn {
+  width: 260px;
+  padding: 12px 20px;
+  background-color: #ff0033;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 50, 0.4);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #ff0033;
+}
+
+/* 🎨 Button color variations */
+.youtube { background-color: #ff0000; }
+.whatsapp { background-color: #25D366; }
+.instagram { background: linear-gradient(45deg, #f09433, #dc2743, #cc2366, #bc1888); }
+.facebook { background-color: #1877F2; }
+.twitter { background-color: #1DA1F2; }
+
+/* 🦶 FOOTER */
+footer {
+  position: fixed;
+  bottom: 10px;
+  font-size: 0.9rem;
+  color: #777;
+  z-index: 2;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+  .glow { font-size: 2.2rem; }
+  .btn { width: 90%; font-size: 0.95rem; }
+}
