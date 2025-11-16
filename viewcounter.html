@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Counter</title>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+  body { background:#111; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; }
+  .view-counter {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(0,0,0,0.45); padding:8px 12px; border-radius:999px;
+    border:1px solid rgba(255,255,255,0.06); color:#fff; font-weight:600;
+    box-shadow:0 6px 18px rgba(0,0,0,0.5); backdrop-filter:blur(6px);
+    font-size:16px;
+  }
+  .view-counter i { font-size:18px; color:#ffd700; }
+</style>
+</head>
+<body>
+
+<div class="view-counter">
+  <i class="fas fa-eye"></i>
+  <span id="viewCount">0</span>
+</div>
+
+<script>
+(function(){
+  const COUNTER_EL = document.getElementById('viewCount');
+  const STORAGE_FLAG = 'joziya_viewed_v2'; // change for unique file
+  const STORAGE_LOCAL = 'joziya_local_views_v2';
+
+  function getLocal(){return Number(localStorage.getItem(STORAGE_LOCAL)||0);}
+  function setLocal(v){localStorage.setItem(STORAGE_LOCAL,String(v));}
+  function setCount(n){if(COUNTER_EL) COUNTER_EL.textContent=n.toLocaleString();}
+
+  const alreadyCounted = !!localStorage.getItem(STORAGE_FLAG);
+  const local = getLocal();
+
+  if(!alreadyCounted){
+    setLocal(local+1);
+    localStorage.setItem(STORAGE_FLAG,Date.now());
+    setCount(local+1);
+  }else{
+    setCount(local);
+  }
+})();
+</script>
+
+</body>
+</html>
