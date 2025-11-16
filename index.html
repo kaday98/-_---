@@ -3,85 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JOZIYA XMD | OFFICIAL HUB</title>
+  <title>𝐉𝐎𝐙𝐈𝐘𝐀 𝐗𝐌𝐃 | 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋-𝐇𝐔𝐁😼</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* Background video container */
+    .video-container {
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:-1;
+      overflow:hidden;
+    }
+    .video-container video {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* Main content overlay */
+    .container {
+      position: relative;
+      z-index:1;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      color:white;
+      font-family:sans-serif;
+    }
+
+    .link-buttons {
+      margin-top: 20px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+    }
+
+    .link-buttons .btn {
+      padding:10px 16px;
+      border-radius:8px;
+      background:rgba(255,0,51,0.85);
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      transition:0.2s;
+    }
+    .link-buttons .btn:hover { background:rgba(255,0,51,1); }
+
+    /* Visitor counter */
+    .view-counter {
+      display:inline-flex; align-items:center; gap:6px;
+      background: rgba(0,0,0,0.45);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      font-size:14px;
+      margin-top:15px;
+    }
+    .view-counter i { color:#ffd700; font-size:16px; }
+  </style>
 </head>
 
 <body>
 
-  <!-- 🎥 VIDEO BACKGROUND PLAYLIST -->
+  <!-- Background Videos -->
   <div class="video-container">
-    <video id="bgVideo" autoplay playsinline>
-      <!-- Sources will be added by JavaScript -->
-    </video>
+    <video id="bgVideo" autoplay playsinline></video>
   </div>
 
-  <!-- 🌐 MAIN CONTENT -->
-  <div class="container" id="content">
+  <!-- Main content -->
+  <div class="container">
     <h1 class="glow">JoZiyA-OFC-xMD-KING [ Rᴀᴍᴇꜱʜ Sᴀᴍᴘᴀᴛʜ ]</h1>
     <p>𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐌𝐘 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐖𝐄𝐁 𝐒𝐈𝐓𝐄 🌐</p>
 
+    <!-- Buttons -->
     <div class="link-buttons">
-      <a href="https://youtube.com/@ramesh_sampath_disanayaka?si=b7kCFVzk2nnPZx7G" target="_blank" class="btn youtube">
+      <a href="https://youtube.com/@ramesh_sampath_disanayaka?si=b7kCFVzk2nnPZx7G" target="_blank" class="btn">
         <i class="fab fa-youtube"></i> YOUTUBE
       </a>
-
-      <a href="https://wa.me/+94766002356?text=𝐡𝐚𝐥𝐥𝐨𝐰_.web__💋💙" target="_blank" class="btn whatsapp">
+      <a href="https://wa.me/+94766002356?text=𝐡𝐚𝐥𝐥𝐨𝐰_.web__💋💙" target="_blank" class="btn">
         <i class="fab fa-whatsapp"></i> WHATSAPP
       </a>
-
-      <a href="https://www.instagram.com/ramesh_sampath_disanayaka?igsh=MXg1am1xcHowODNnNw==" target="_blank" class="btn instagram">
+      <a href="https://www.instagram.com/ramesh_sampath_disanayaka?igsh=MXg1am1xcHowODNnNw==" target="_blank" class="btn">
         <i class="fab fa-instagram"></i> INSTAGRAM
       </a>
-
-      <a href="https://www.facebook.com/profile.php?id=61577689516914" target="_blank" class="btn facebook">
+      <a href="https://www.facebook.com/profile.php?id=61577689516914" target="_blank" class="btn">
         <i class="fab fa-facebook"></i> FACEBOOK
       </a>
-
-      <a href="li" target="_blank" class="btn twitter">
-        <i class="fab fa-twitter"></i> TWITTER / X
-      </a>
-
       <a href="link add" target="_blank" class="btn">
         <i class="fas fa-globe"></i> OLD WEBSITE
       </a>
     </div>
+
+    <!-- Visitor Counter -->
+    <div class="view-counter">
+      <i class="fas fa-eye"></i>
+      <span id="viewCount">0</span>
+    </div>
   </div>
 
-  <footer>© 2025 JoZiya-OFC-xMD-KING | All Rights Reserved</footer>
+  <footer style="position:relative; z-index:1; text-align:center; color:white; margin-top:50px;">
+    © 2025 JoZiyA-OFC-xMD-KING | All Rights Reserved
+  </footer>
 
-  <!-- 🎥 VIDEO PLAYLIST SCRIPT -->
+  <!-- Scripts -->
   <script>
+    // ---- VIDEO PLAYLIST ----
     const videoPlayer = document.getElementById("bgVideo");
-
-    // ✔ Your 3 videos (playlist)
     const playlist = [
       "https://files.catbox.moe/yv270w.mp4",
       "https://files.catbox.moe/zicdkx.mp4",
       "https://files.catbox.moe/axb0jw.mp4"
     ];
-
     let current = 0;
-
-    // Load first video
     videoPlayer.src = playlist[current];
     videoPlayer.load();
     videoPlayer.play();
-
-    // When video ends → next video
-    videoPlayer.addEventListener("ended", function () {
+    videoPlayer.addEventListener("ended", function() {
       current++;
-
-      if (current >= playlist.length) {
-        current = 0; // Loop again
-      }
-
+      if(current >= playlist.length) current = 0;
       videoPlayer.src = playlist[current];
       videoPlayer.load();
       videoPlayer.play();
     });
-  </script>
 
+    // ---- VIEW COUNTER ----
+    (function(){
+      const COUNTER_EL = document.getElementById('viewCount');
+      const STORAGE_FLAG = 'joziya_viewed_v3';
+      const STORAGE_LOCAL = 'joziya_local_views_v3';
+
+      function getLocal(){return Number(localStorage.getItem(STORAGE_LOCAL)||0);}
+      function setLocal(v){localStorage.setItem(STORAGE_LOCAL,String(v));}
+      function setCount(n){if(COUNTER_EL) COUNTER_EL.textContent=n.toLocaleString();}
+
+      const alreadyCounted = !!localStorage.getItem(STORAGE_FLAG);
+      const local = getLocal();
+
+      if(!alreadyCounted){
+        setLocal(local+1);
+        localStorage.setItem(STORAGE_FLAG,Date.now());
+        setCount(local+1);
+      }else{
+        setCount(local);
+      }
+    })();
+  </script>
 </body>
 </html>
