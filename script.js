@@ -28,4 +28,4 @@ setTimeout(() => {
   }, 2000);
 }, 39000); // ⏱️ 39 seconds delay
 
-console.log("🎬 Welcome to 𝐽𝛩𝛧𝐼𝑌𝜟 𝛸𝛭𝐷 cinematic site!");
+console.log("🎬 Welcome to 𝐉𝐎𝐙𝐈𝐘𝐀 𝐗𝐌𝐃 cinematic site!");
